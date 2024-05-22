@@ -51,7 +51,5 @@ Teacher 2:
   - They teach subject 4 in department 1.
 */
 
-SELECT teacher_id,COUNT(teacher_id) AS cnt FROM
-(SELECT teacher_id,subject_id 
-FROM Teacher GROUP BY teacher_id,subject_id) AS TABLE1
-GROUP BY teacher_id
+SELECT teacher_id,COUNT(DISTINCT subject_id) AS cnt 
+FROM Teacher GROUP BY teacher_id
